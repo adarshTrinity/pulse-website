@@ -31,6 +31,9 @@
   <!-- Favicon colour -->
   <meta name="theme-color" content="#F5C200" />
 
+  <!-- Lucide Icons (stroke-based, 1400+ icons, matches brand 2px stroke style) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
   <style>
     /* ─── RESET & BASE ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -282,6 +285,13 @@
       flex-shrink: 0; color: #ff5555; padding: 12px;
     }
     .problem-icon svg { width: 100%; height: 100%; }
+    /* Lucide icon sizing — applies to all sections */
+    .problem-icon i[data-lucide], .step-icon i[data-lucide],
+    .feature-icon i[data-lucide], .industry-icon i[data-lucide],
+    .int-icon i[data-lucide] { display: contents; }
+    .problem-icon svg[data-lucide], .step-icon svg[data-lucide],
+    .feature-icon svg[data-lucide], .industry-icon svg[data-lucide] { width: 100%; height: 100%; }
+    .int-icon svg[data-lucide] { width: 100%; height: 100%; }
     .problem-card-text h4 {
       font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;
     }
@@ -870,14 +880,7 @@
     <div class="problem-cards">
       <div class="problem-card reveal reveal-delay-1">
         <div class="problem-icon">
-          <!-- Closed eye: shooting blind — no visibility whatsoever -->
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 10C5 13 8.5 17 14 17C19.5 17 23 13 25 10"/>
-            <line x1="5" y1="5" x2="23" y2="23"/>
-            <line x1="10" y1="18" x2="8" y2="22"/>
-            <line x1="14" y1="19" x2="14" y2="23"/>
-            <line x1="18" y1="18" x2="20" y2="22"/>
-          </svg>
+          <i data-lucide="eye-off"></i>
         </div>
         <div class="problem-card-text">
           <h4>Shooting Blind</h4>
@@ -886,15 +889,7 @@
       </div>
       <div class="problem-card reveal reveal-delay-2">
         <div class="problem-icon">
-          <!-- Hourglass: time draining away — costly delays -->
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="6" y1="4" x2="22" y2="4"/>
-            <line x1="6" y1="24" x2="22" y2="24"/>
-            <path d="M8 4C8 4 10 8 14 13C18 8 20 4 20 4"/>
-            <path d="M8 24C8 24 10 20 14 15C18 20 20 24 20 24"/>
-            <path d="M8 4L20 24"/>
-            <path d="M20 4L8 24"/>
-          </svg>
+          <i data-lucide="hourglass"></i>
         </div>
         <div class="problem-card-text">
           <h4>Costly Delays</h4>
@@ -903,13 +898,7 @@
       </div>
       <div class="problem-card reveal reveal-delay-3">
         <div class="problem-icon">
-          <!-- Broken link chain: creative vision severed mid-pipeline -->
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M11 17C11 17 8 20 6 20C3.8 20 2 18.2 2 16C2 13.8 3.8 12 6 12L10 12"/>
-            <path d="M17 11C17 11 20 8 22 8C24.2 8 26 9.8 26 12C26 14.2 24.2 16 22 16L18 16"/>
-            <line x1="14" y1="10" x2="16" y2="10" stroke-dasharray="2.5 2"/>
-            <line x1="12" y1="18" x2="14" y2="18" stroke-dasharray="2.5 2"/>
-          </svg>
+          <i data-lucide="unlink"></i>
         </div>
         <div class="problem-card-text">
           <h4>Creative Compromise</h4>
@@ -931,12 +920,7 @@
       <div class="step">
         <span class="step-num">Step 01</span>
         <span class="step-icon">
-          <!-- Bold horseshoe magnet: attach/clip onto anything -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 44L18 26C18 16.6 38 16.6 38 26L38 44"/>
-            <rect x="12" y="40" width="12" height="10" rx="3"/>
-            <rect x="32" y="40" width="12" height="10" rx="3"/>
-          </svg>
+          <i data-lucide="magnet"></i>
         </span>
         <h3>Attach</h3>
         <p>Clip Pulse to any prop, rig, camera, or actor. No cables. No complex setup. Ready in seconds.</p>
@@ -945,18 +929,7 @@
       <div class="step">
         <span class="step-num">Step 02</span>
         <span class="step-icon">
-          <!-- Bold 6-axis arrows: captures all axes of motion -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="28" cy="28" r="5"/>
-            <line x1="28" y1="6" x2="28" y2="18"/>
-            <polyline points="24 10 28 6 32 10"/>
-            <line x1="28" y1="38" x2="28" y2="50"/>
-            <polyline points="24 46 28 50 32 46"/>
-            <line x1="6" y1="28" x2="18" y2="28"/>
-            <polyline points="10 24 6 28 10 32"/>
-            <line x1="38" y1="28" x2="50" y2="28"/>
-            <polyline points="46 24 50 28 46 32"/>
-          </svg>
+          <i data-lucide="move"></i>
         </span>
         <h3>Move</h3>
         <p>Perform the shot as usual. Pulse captures all 6 axes of motion with precision — wirelessly, in real time.</p>
@@ -965,12 +938,7 @@
       <div class="step">
         <span class="step-num">Step 03</span>
         <span class="step-icon">
-          <!-- Bold eye with radiating live rings: see it streaming live -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 28C6 28 14 14 28 14C42 14 50 28 50 28C50 28 42 42 28 42C14 42 6 28 6 28Z"/>
-            <circle cx="28" cy="28" r="7"/>
-            <circle cx="28" cy="28" r="3" fill="currentColor" stroke="none"/>
-          </svg>
+          <i data-lucide="eye"></i>
         </span>
         <h3>See It Live</h3>
         <p>Watch motion stream instantly to Unreal Engine, your VFX pipeline, or the Pulse dashboard. No guessing. Pure control.</p>
@@ -1096,10 +1064,7 @@
       <div class="feature-card reveal">
         <div class="feature-pill">01</div>
         <span class="feature-icon">
-          <!-- Lightning bolt: burst speed, electrical power — research validated for performance -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="38 6 20 34 32 34 26 58 46 28 34 28 38 6"/>
-          </svg>
+          <i data-lucide="zap"></i>
         </span>
         <h3>Instant Speed</h3>
         <p>From power-on to live streaming in under a minute. No configuration menus, no cables, no calibration ritual. Pulse is ready when your shot is.</p>
@@ -1107,18 +1072,7 @@
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-pill">02</div>
         <span class="feature-icon">
-          <!-- Compression arrows pointing inward to centre: physical compactness/small size -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="22" y="22" width="20" height="20" rx="3"/>
-            <polyline points="8 16 8 8 16 8"/>
-            <line x1="8" y1="8" x2="22" y2="22"/>
-            <polyline points="56 16 56 8 48 8"/>
-            <line x1="56" y1="8" x2="42" y2="22"/>
-            <polyline points="8 48 8 56 16 56"/>
-            <line x1="8" y1="56" x2="22" y2="42"/>
-            <polyline points="56 48 56 56 48 56"/>
-            <line x1="56" y1="56" x2="42" y2="42"/>
-          </svg>
+          <i data-lucide="minimize-2"></i>
         </span>
         <h3>Ultra Compact</h3>
         <p>Small enough to clip to a weapon, a costume piece, or a camera rig without interfering with the shot. It goes where bulky systems can't.</p>
@@ -1126,11 +1080,7 @@
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-pill">03</div>
         <span class="feature-icon">
-          <!-- Power button: universal "one button" metaphor — research #1 for ease of use -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 16C13 21 8 28 8 36C8 49 19 58 32 58C45 58 56 49 56 36C56 28 51 21 44 16"/>
-            <line x1="32" y1="8" x2="32" y2="34"/>
-          </svg>
+          <i data-lucide="power"></i>
         </span>
         <h3>Ease of Use</h3>
         <p>Designed for crew members, not engineers. If you can press a button, you can use Pulse. The interface stays out of your way so you can focus on the work.</p>
@@ -1138,13 +1088,7 @@
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-pill">04</div>
         <span class="feature-icon">
-          <!-- WiFi arcs + dot: standard wireless icon — most universally recognised connectivity symbol -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 30C8 30 14 16 32 16C50 16 56 30 56 30"/>
-            <path d="M16 38C16 38 20 28 32 28C44 28 48 38 48 38"/>
-            <path d="M24 46C24 46 26 40 32 40C38 40 40 46 40 46"/>
-            <circle cx="32" cy="52" r="3.5" fill="currentColor" stroke="none"/>
-          </svg>
+          <i data-lucide="wifi"></i>
         </span>
         <h3>Wireless Freedom</h3>
         <p>No cables tethering your actors or restricting your rigs. Pulse streams wirelessly so every movement is natural and unrestricted.</p>
@@ -1152,10 +1096,7 @@
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-pill">05</div>
         <span class="feature-icon">
-          <!-- ECG heartbeat waveform: the brand name IS "Pulse" — perfect semantic match for real-time data -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="4 32 14 32 20 14 26 50 32 22 38 44 44 32 60 32"/>
-          </svg>
+          <i data-lucide="activity"></i>
         </span>
         <h3>Real-Time Feedback</h3>
         <p>Watch your camera motion, prop movement, or rig data update live in Unreal Engine or your VFX dashboard — during the take, not after.</p>
@@ -1163,15 +1104,7 @@
       <div class="feature-card reveal reveal-delay-3">
         <div class="feature-pill">06</div>
         <span class="feature-icon">
-          <!-- Nodes triangle: data flow pipeline — research #1 for integration/pipeline metaphor -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="32" cy="12" r="7"/>
-            <circle cx="12" cy="48" r="7"/>
-            <circle cx="52" cy="48" r="7"/>
-            <line x1="32" y1="19" x2="12" y2="41"/>
-            <line x1="32" y1="19" x2="52" y2="41"/>
-            <line x1="19" y1="48" x2="45" y2="48"/>
-          </svg>
+          <i data-lucide="network"></i>
         </span>
         <h3>Universal Pipeline</h3>
         <p>Pulse speaks the language of your existing tools. It plugs into Unreal, VFX software, game engines, and mechanical rigs without bespoke integration work.</p>
@@ -1194,15 +1127,7 @@
       <div class="industry-card reveal">
         <div class="industry-bg"></div>
         <div class="industry-icon">
-          <!-- Clapperboard: research validates this beats film frame for Film/VFX — most semantically accurate to production -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="8" y="22" width="40" height="28" rx="4"/>
-            <rect x="8" y="12" width="40" height="12" rx="3"/>
-            <line x1="19" y1="12" x2="15" y2="24"/>
-            <line x1="29" y1="12" x2="25" y2="24"/>
-            <line x1="39" y1="12" x2="35" y2="24"/>
-            <line x1="16" y1="36" x2="40" y2="36"/>
-          </svg>
+          <i data-lucide="clapperboard"></i>
         </div>
         <div class="industry-body">
           <div class="industry-tag">Primary Market</div>
@@ -1213,14 +1138,7 @@
       <div class="industry-card reveal reveal-delay-1">
         <div class="industry-bg"></div>
         <div class="industry-icon">
-          <!-- Game controller: research validates this as most universal gaming metaphor (cross-platform recognition) -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 22C5 22 4 26 4 30C4 38 8 46 14 46C18 46 20 42 28 42C36 42 38 46 42 46C48 46 52 38 52 30C52 26 51 22 48 22Z"/>
-            <line x1="15" y1="30" x2="22" y2="30"/>
-            <line x1="18.5" y1="26.5" x2="18.5" y2="33.5"/>
-            <circle cx="37" cy="28" r="2.5" fill="currentColor" stroke="none"/>
-            <circle cx="43" cy="28" r="2.5" fill="currentColor" stroke="none"/>
-          </svg>
+          <i data-lucide="gamepad-2"></i>
         </div>
         <div class="industry-body">
           <div class="industry-tag">Growing Market</div>
@@ -1278,52 +1196,25 @@
     <div class="integrations-row reveal reveal-delay-3">
       <div class="int-chip">
         <span class="int-icon">
-          <!-- Radial starburst: engine/rendering power — Unreal's iconic "light source" metaphor -->
-          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="3.5"/>
-            <line x1="11" y1="1" x2="11" y2="4"/>
-            <line x1="11" y1="18" x2="11" y2="21"/>
-            <line x1="1" y1="11" x2="4" y2="11"/>
-            <line x1="18" y1="11" x2="21" y2="11"/>
-            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/>
-            <line x1="15.7" y1="15.7" x2="17.8" y2="17.8"/>
-            <line x1="17.8" y1="4.2" x2="15.7" y2="6.3"/>
-            <line x1="4.2" y1="17.8" x2="6.3" y2="15.7"/>
-          </svg>
+          <i data-lucide="sun"></i>
         </span> Unreal Engine
       </div>
       <span class="int-connector">+</span>
       <div class="int-chip">
         <span class="int-icon">
-          <!-- Stacked layers: VFX compositing pipeline — layers are the foundational VFX metaphor -->
-          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 8L11 4L20 8L11 12Z"/>
-            <path d="M2 12L11 16L20 12"/>
-            <path d="M2 16L11 20L20 16"/>
-          </svg>
+          <i data-lucide="layers"></i>
         </span> VFX Pipelines
       </div>
       <span class="int-connector">+</span>
       <div class="int-chip">
         <span class="int-icon">
-          <!-- Game controller outline: consistent with industry card, strong recognition -->
-          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9C1.5 9 1 11 1 13C1 16.5 3 19.5 6 19.5C8 19.5 9 18 11 18C13 18 14 19.5 16 19.5C19 19.5 21 16.5 21 13C21 11 20.5 9 19 9Z"/>
-            <line x1="6" y1="12" x2="9" y2="12"/>
-            <line x1="7.5" y1="10.5" x2="7.5" y2="13.5"/>
-            <circle cx="15" cy="11" r="1.3" fill="currentColor" stroke="none"/>
-            <circle cx="17.5" cy="11" r="1.3" fill="currentColor" stroke="none"/>
-          </svg>
+          <i data-lucide="gamepad-2"></i>
         </span> Game Engines
       </div>
       <span class="int-connector">+</span>
       <div class="int-chip">
         <span class="int-icon">
-          <!-- Gear/cog: mechanical rigs — universally recognised mechanical metaphor -->
-          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="3.5"/>
-            <path d="M11 1L12.5 4.5L16 3L16 7L19.5 8L18 11L19.5 14L16 15L16 19L12.5 17.5L11 21L9.5 17.5L6 19L6 15L2.5 14L4 11L2.5 8L6 7L6 3L9.5 4.5Z"/>
-          </svg>
+          <i data-lucide="cog"></i>
         </span> Mechanical Rigs
       </div>
     </div>
@@ -1448,6 +1339,15 @@ hero.addEventListener('mousemove', (e) => {
 });
 hero.addEventListener('mouseleave', () => {
   if (deviceImg) deviceImg.style.transform = 'perspective(800px) rotateY(0) rotateX(0) translateY(0)';
+});
+
+/* ─── LUCIDE ICONS ───────────────────────────────────── */
+lucide.createIcons({
+  attrs: {
+    'stroke-width': '2',
+    'stroke-linecap': 'round',
+    'stroke-linejoin': 'round',
+  }
 });
 </script>
 </body>
