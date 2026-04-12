@@ -692,6 +692,16 @@
       font-size: 0.72rem; color: rgba(255,255,255,0.15);
       letter-spacing: 0.06em;
     }
+    .wip-image-real {
+      width: 100%; border-radius: 24px; overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    }
+    .wip-image-real img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+    .wip-image-real:hover img { transform: scale(1.03); }
     .wip-image-caption {
       font-size: 0.78rem; color: rgba(255,255,255,0.25);
       letter-spacing: 0.02em; line-height: 1.6;
@@ -795,22 +805,11 @@
     </div>
 
     <div class="wip-image-wrap reveal reveal-delay-2">
-      <!-- ↓ Replace this placeholder with your product image -->
-      <div class="wip-image-placeholder">
-        <div class="wip-placeholder-inner">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="8" y="14" width="48" height="36" rx="4"/>
-            <circle cx="32" cy="32" r="10"/>
-            <circle cx="32" cy="32" r="4" fill="rgba(255,255,255,0.2)" stroke="none"/>
-            <line x1="8" y1="46" x2="20" y2="34"/>
-            <line x1="44" y1="34" x2="56" y2="46"/>
-          </svg>
-          <p>Your product image goes here</p>
-          <span>Recommended: 1400 × 900px</span>
-        </div>
+      <div class="wip-image-real">
+        <img src="pulse-hero.jpg" alt="Person using Pulse wrist device to control a game on TV in real time" />
       </div>
       <div class="wip-image-caption">
-        Pulse attached to a mechanical rig on set — streaming live to Unreal Engine.
+        Pulse worn on the wrist — translating real physical motion into live on-screen action.
       </div>
     </div>
 
