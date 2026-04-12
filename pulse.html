@@ -870,11 +870,13 @@
     <div class="problem-cards">
       <div class="problem-card reveal reveal-delay-1">
         <div class="problem-icon">
-          <!-- Eye with slash: no visibility -->
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 14C3 14 7 7 14 7C21 7 25 14 25 14C25 14 21 21 14 21C7 21 3 14 3 14Z"/>
-            <circle cx="14" cy="14" r="3.5"/>
+          <!-- Closed eye: shooting blind — no visibility whatsoever -->
+          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 10C5 13 8.5 17 14 17C19.5 17 23 13 25 10"/>
             <line x1="5" y1="5" x2="23" y2="23"/>
+            <line x1="10" y1="18" x2="8" y2="22"/>
+            <line x1="14" y1="19" x2="14" y2="23"/>
+            <line x1="18" y1="18" x2="20" y2="22"/>
           </svg>
         </div>
         <div class="problem-card-text">
@@ -884,11 +886,14 @@
       </div>
       <div class="problem-card reveal reveal-delay-2">
         <div class="problem-icon">
-          <!-- Clock with warning: time lost -->
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="14" cy="14" r="10"/>
-            <polyline points="14 8 14 14 18.5 16.5"/>
-            <line x1="14" y1="22" x2="14" y2="24"/>
+          <!-- Hourglass: time draining away — costly delays -->
+          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="6" y1="4" x2="22" y2="4"/>
+            <line x1="6" y1="24" x2="22" y2="24"/>
+            <path d="M8 4C8 4 10 8 14 13C18 8 20 4 20 4"/>
+            <path d="M8 24C8 24 10 20 14 15C18 20 20 24 20 24"/>
+            <path d="M8 4L20 24"/>
+            <path d="M20 4L8 24"/>
           </svg>
         </div>
         <div class="problem-card-text">
@@ -898,13 +903,12 @@
       </div>
       <div class="problem-card reveal reveal-delay-3">
         <div class="problem-icon">
-          <!-- Broken path: creative vision severed -->
-          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 24 L10 18"/>
-            <path d="M14 14 L24 4"/>
-            <path d="M10 18 L14 14" stroke-dasharray="2 2"/>
-            <circle cx="4" cy="24" r="2" fill="currentColor" stroke="none"/>
-            <circle cx="24" cy="4" r="2" fill="currentColor" stroke="none"/>
+          <!-- Broken link chain: creative vision severed mid-pipeline -->
+          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 17C11 17 8 20 6 20C3.8 20 2 18.2 2 16C2 13.8 3.8 12 6 12L10 12"/>
+            <path d="M17 11C17 11 20 8 22 8C24.2 8 26 9.8 26 12C26 14.2 24.2 16 22 16L18 16"/>
+            <line x1="14" y1="10" x2="16" y2="10" stroke-dasharray="2.5 2"/>
+            <line x1="12" y1="18" x2="14" y2="18" stroke-dasharray="2.5 2"/>
           </svg>
         </div>
         <div class="problem-card-text">
@@ -927,11 +931,11 @@
       <div class="step">
         <span class="step-num">Step 01</span>
         <span class="step-icon">
-          <!-- Magnet/clip: attach -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 40 L16 24 C16 15.2 40 15.2 40 24 L40 40"/>
-            <line x1="12" y1="40" x2="20" y2="40"/>
-            <line x1="36" y1="40" x2="44" y2="40"/>
+          <!-- Bold horseshoe magnet: attach/clip onto anything -->
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 44L18 26C18 16.6 38 16.6 38 26L38 44"/>
+            <rect x="12" y="40" width="12" height="10" rx="3"/>
+            <rect x="32" y="40" width="12" height="10" rx="3"/>
           </svg>
         </span>
         <h3>Attach</h3>
@@ -941,11 +945,17 @@
       <div class="step">
         <span class="step-num">Step 02</span>
         <span class="step-icon">
-          <!-- Motion trail arc: move -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10 38 C10 38 14 18 28 18 C42 18 46 38 46 38"/>
-            <polyline points="40 32 46 38 40 44"/>
-            <circle cx="28" cy="18" r="3" fill="currentColor" stroke="none"/>
+          <!-- Bold 6-axis arrows: captures all axes of motion -->
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="28" cy="28" r="5"/>
+            <line x1="28" y1="6" x2="28" y2="18"/>
+            <polyline points="24 10 28 6 32 10"/>
+            <line x1="28" y1="38" x2="28" y2="50"/>
+            <polyline points="24 46 28 50 32 46"/>
+            <line x1="6" y1="28" x2="18" y2="28"/>
+            <polyline points="10 24 6 28 10 32"/>
+            <line x1="38" y1="28" x2="50" y2="28"/>
+            <polyline points="46 24 50 28 46 32"/>
           </svg>
         </span>
         <h3>Move</h3>
@@ -955,13 +965,11 @@
       <div class="step">
         <span class="step-num">Step 03</span>
         <span class="step-icon">
-          <!-- Eye with signal pulse: see it live -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Bold eye with radiating live rings: see it streaming live -->
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 28C6 28 14 14 28 14C42 14 50 28 50 28C50 28 42 42 28 42C14 42 6 28 6 28Z"/>
-            <circle cx="28" cy="28" r="6"/>
-            <circle cx="28" cy="28" r="2.5" fill="currentColor" stroke="none"/>
-            <path d="M28 8 C28 8 28 6 28 4" opacity="0.4"/>
-            <path d="M28 52 C28 52 28 50 28 48" opacity="0.4"/>
+            <circle cx="28" cy="28" r="7"/>
+            <circle cx="28" cy="28" r="3" fill="currentColor" stroke="none"/>
           </svg>
         </span>
         <h3>See It Live</h3>
@@ -1088,9 +1096,9 @@
       <div class="feature-card reveal">
         <div class="feature-pill">01</div>
         <span class="feature-icon">
-          <!-- Lightning bolt: speed -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="38 8 22 34 32 34 26 56 46 28 34 28 38 8"/>
+          <!-- Lightning bolt: burst speed, electrical power — research validated for performance -->
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="38 6 20 34 32 34 26 58 46 28 34 28 38 6"/>
           </svg>
         </span>
         <h3>Instant Speed</h3>
@@ -1099,11 +1107,17 @@
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-pill">02</div>
         <span class="feature-icon">
-          <!-- Three nested squares shrinking: compact -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="8" y="8" width="48" height="48" rx="6"/>
-            <rect x="18" y="18" width="28" height="28" rx="4"/>
-            <rect x="27" y="27" width="10" height="10" rx="2"/>
+          <!-- Compression arrows pointing inward to centre: physical compactness/small size -->
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="22" y="22" width="20" height="20" rx="3"/>
+            <polyline points="8 16 8 8 16 8"/>
+            <line x1="8" y1="8" x2="22" y2="22"/>
+            <polyline points="56 16 56 8 48 8"/>
+            <line x1="56" y1="8" x2="42" y2="22"/>
+            <polyline points="8 48 8 56 16 56"/>
+            <line x1="8" y1="56" x2="22" y2="42"/>
+            <polyline points="56 48 56 56 48 56"/>
+            <line x1="56" y1="56" x2="42" y2="42"/>
           </svg>
         </span>
         <h3>Ultra Compact</h3>
@@ -1112,11 +1126,10 @@
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-pill">03</div>
         <span class="feature-icon">
-          <!-- Single large circle with centre dot: one button simplicity -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="32" cy="32" r="24"/>
-            <circle cx="32" cy="32" r="8"/>
-            <circle cx="32" cy="32" r="2.5" fill="currentColor" stroke="none"/>
+          <!-- Power button: universal "one button" metaphor — research #1 for ease of use -->
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 16C13 21 8 28 8 36C8 49 19 58 32 58C45 58 56 49 56 36C56 28 51 21 44 16"/>
+            <line x1="32" y1="8" x2="32" y2="34"/>
           </svg>
         </span>
         <h3>Ease of Use</h3>
@@ -1125,12 +1138,12 @@
       <div class="feature-card reveal reveal-delay-1">
         <div class="feature-pill">04</div>
         <span class="feature-icon">
-          <!-- Three expanding arcs: wireless signal -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 44 C14 44 14 22 32 22 C50 22 50 44 50 44"/>
-            <path d="M22 44 C22 44 22 30 32 30 C42 30 42 44 42 44"/>
-            <path d="M30 44 C30 44 30 37 32 37 C34 37 34 44 34 44"/>
-            <circle cx="32" cy="48" r="2.5" fill="currentColor" stroke="none"/>
+          <!-- WiFi arcs + dot: standard wireless icon — most universally recognised connectivity symbol -->
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 30C8 30 14 16 32 16C50 16 56 30 56 30"/>
+            <path d="M16 38C16 38 20 28 32 28C44 28 48 38 48 38"/>
+            <path d="M24 46C24 46 26 40 32 40C38 40 40 46 40 46"/>
+            <circle cx="32" cy="52" r="3.5" fill="currentColor" stroke="none"/>
           </svg>
         </span>
         <h3>Wireless Freedom</h3>
@@ -1139,9 +1152,9 @@
       <div class="feature-card reveal reveal-delay-2">
         <div class="feature-pill">05</div>
         <span class="feature-icon">
-          <!-- Pulse / heartbeat waveform: real-time -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="4 32 16 32 22 16 28 48 34 24 40 40 46 32 60 32"/>
+          <!-- ECG heartbeat waveform: the brand name IS "Pulse" — perfect semantic match for real-time data -->
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 32 14 32 20 14 26 50 32 22 38 44 44 32 60 32"/>
           </svg>
         </span>
         <h3>Real-Time Feedback</h3>
@@ -1150,14 +1163,14 @@
       <div class="feature-card reveal reveal-delay-3">
         <div class="feature-pill">06</div>
         <span class="feature-icon">
-          <!-- Three nodes connected: universal integration -->
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="32" cy="14" r="6"/>
-            <circle cx="14" cy="46" r="6"/>
-            <circle cx="50" cy="46" r="6"/>
-            <line x1="32" y1="20" x2="14" y2="40"/>
-            <line x1="32" y1="20" x2="50" y2="40"/>
-            <line x1="20" y1="46" x2="44" y2="46"/>
+          <!-- Nodes triangle: data flow pipeline — research #1 for integration/pipeline metaphor -->
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="32" cy="12" r="7"/>
+            <circle cx="12" cy="48" r="7"/>
+            <circle cx="52" cy="48" r="7"/>
+            <line x1="32" y1="19" x2="12" y2="41"/>
+            <line x1="32" y1="19" x2="52" y2="41"/>
+            <line x1="19" y1="48" x2="45" y2="48"/>
           </svg>
         </span>
         <h3>Universal Pipeline</h3>
@@ -1181,15 +1194,14 @@
       <div class="industry-card reveal">
         <div class="industry-bg"></div>
         <div class="industry-icon">
-          <!-- Film frame with notches -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="8" y="10" width="40" height="36" rx="4"/>
-            <rect x="8" y="18" width="4" height="6" rx="1" fill="currentColor" stroke="none"/>
-            <rect x="8" y="30" width="4" height="6" rx="1" fill="currentColor" stroke="none"/>
-            <rect x="44" y="18" width="4" height="6" rx="1" fill="currentColor" stroke="none"/>
-            <rect x="44" y="30" width="4" height="6" rx="1" fill="currentColor" stroke="none"/>
-            <line x1="16" y1="10" x2="16" y2="46"/>
-            <line x1="40" y1="10" x2="40" y2="46"/>
+          <!-- Clapperboard: research validates this beats film frame for Film/VFX — most semantically accurate to production -->
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="22" width="40" height="28" rx="4"/>
+            <rect x="8" y="12" width="40" height="12" rx="3"/>
+            <line x1="19" y1="12" x2="15" y2="24"/>
+            <line x1="29" y1="12" x2="25" y2="24"/>
+            <line x1="39" y1="12" x2="35" y2="24"/>
+            <line x1="16" y1="36" x2="40" y2="36"/>
           </svg>
         </div>
         <div class="industry-body">
@@ -1201,13 +1213,13 @@
       <div class="industry-card reveal reveal-delay-1">
         <div class="industry-bg"></div>
         <div class="industry-icon">
-          <!-- D-pad cross: games -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="20" y="8" width="16" height="14" rx="3"/>
-            <rect x="20" y="34" width="16" height="14" rx="3"/>
-            <rect x="8" y="20" width="14" height="16" rx="3"/>
-            <rect x="34" y="20" width="14" height="16" rx="3"/>
-            <circle cx="28" cy="28" r="4"/>
+          <!-- Game controller: research validates this as most universal gaming metaphor (cross-platform recognition) -->
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 22C5 22 4 26 4 30C4 38 8 46 14 46C18 46 20 42 28 42C36 42 38 46 42 46C48 46 52 38 52 30C52 26 51 22 48 22Z"/>
+            <line x1="15" y1="30" x2="22" y2="30"/>
+            <line x1="18.5" y1="26.5" x2="18.5" y2="33.5"/>
+            <circle cx="37" cy="28" r="2.5" fill="currentColor" stroke="none"/>
+            <circle cx="43" cy="28" r="2.5" fill="currentColor" stroke="none"/>
           </svg>
         </div>
         <div class="industry-body">
@@ -1219,14 +1231,12 @@
       <div class="industry-card reveal reveal-delay-2">
         <div class="industry-bg"></div>
         <div class="industry-icon">
-          <!-- VR visor: two lenses side by side -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 20 L4 36 C4 40 8 44 12 44 L18 44 C22 44 24 40 24 36 L24 20"/>
-            <path d="M32 20 L32 36 C32 40 34 44 38 44 L44 44 C48 44 52 40 52 36 L52 20"/>
-            <path d="M4 20 C4 16 8 14 14 14 L18 14"/>
-            <path d="M38 14 L42 14 C48 14 52 16 52 20"/>
-            <path d="M18 14 C20 14 22 17 24 20"/>
-            <path d="M32 20 C34 17 36 14 38 14"/>
+          <!-- VR headset: research validates headset over goggles for broader XR context -->
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 22C4 18 8 14 14 14L42 14C48 14 52 18 52 22L52 36C52 40 48 44 42 44L38 44C36 44 34 42 28 42C22 42 20 44 18 44L14 44C8 44 4 40 4 36Z"/>
+            <ellipse cx="18" cy="29" rx="7" ry="8"/>
+            <ellipse cx="38" cy="29" rx="7" ry="8"/>
+            <line x1="25" y1="29" x2="31" y2="29"/>
           </svg>
         </div>
         <div class="industry-body">
@@ -1238,13 +1248,15 @@
       <div class="industry-card reveal reveal-delay-3">
         <div class="industry-bg"></div>
         <div class="industry-icon">
-          <!-- Minimal human figure in motion: consumer -->
-          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="28" cy="12" r="5"/>
-            <line x1="28" y1="17" x2="28" y2="34"/>
-            <polyline points="16 24 28 28 40 24"/>
-            <polyline points="28 34 20 46"/>
-            <polyline points="28 34 36 46"/>
+          <!-- Human in active motion pose: consumer gaming with full body movement -->
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="28" cy="10" r="5"/>
+            <path d="M28 15L28 30"/>
+            <path d="M28 22L18 18"/>
+            <path d="M28 22L40 14"/>
+            <path d="M28 30L20 44"/>
+            <path d="M28 30L36 44"/>
+            <circle cx="40" cy="14" r="3" fill="currentColor" stroke="none"/>
           </svg>
         </div>
         <div class="industry-body">
@@ -1266,46 +1278,51 @@
     <div class="integrations-row reveal reveal-delay-3">
       <div class="int-chip">
         <span class="int-icon">
-          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="4"/>
-            <path d="M11 3 L11 1M11 21 L11 19M3 11 L1 11M21 11 L19 11M5.6 5.6 L4.2 4.2M17.8 17.8 L16.4 16.4M5.6 16.4 L4.2 17.8M17.8 4.2 L16.4 5.6"/>
+          <!-- Radial starburst: engine/rendering power — Unreal's iconic "light source" metaphor -->
+          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="3.5"/>
+            <line x1="11" y1="1" x2="11" y2="4"/>
+            <line x1="11" y1="18" x2="11" y2="21"/>
+            <line x1="1" y1="11" x2="4" y2="11"/>
+            <line x1="18" y1="11" x2="21" y2="11"/>
+            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/>
+            <line x1="15.7" y1="15.7" x2="17.8" y2="17.8"/>
+            <line x1="17.8" y1="4.2" x2="15.7" y2="6.3"/>
+            <line x1="4.2" y1="17.8" x2="6.3" y2="15.7"/>
           </svg>
         </span> Unreal Engine
       </div>
       <span class="int-connector">+</span>
       <div class="int-chip">
         <span class="int-icon">
-          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="5" width="16" height="12" rx="2"/>
-            <line x1="3" y1="8" x2="19" y2="8"/>
-            <rect x="3" y="5" width="3" height="3" rx="0.5" fill="currentColor" stroke="none"/>
-            <rect x="16" y="5" width="3" height="3" rx="0.5" fill="currentColor" stroke="none"/>
-            <rect x="3" y="14" width="3" height="3" rx="0.5" fill="currentColor" stroke="none"/>
-            <rect x="16" y="14" width="3" height="3" rx="0.5" fill="currentColor" stroke="none"/>
+          <!-- Stacked layers: VFX compositing pipeline — layers are the foundational VFX metaphor -->
+          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 8L11 4L20 8L11 12Z"/>
+            <path d="M2 12L11 16L20 12"/>
+            <path d="M2 16L11 20L20 16"/>
           </svg>
         </span> VFX Pipelines
       </div>
       <span class="int-connector">+</span>
       <div class="int-chip">
         <span class="int-icon">
-          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="8" y="3" width="6" height="6" rx="1.5"/>
-            <rect x="8" y="13" width="6" height="6" rx="1.5"/>
-            <rect x="3" y="8" width="5" height="6" rx="1.5"/>
-            <rect x="14" y="8" width="5" height="6" rx="1.5"/>
-            <circle cx="11" cy="11" r="2"/>
+          <!-- Game controller outline: consistent with industry card, strong recognition -->
+          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9C1.5 9 1 11 1 13C1 16.5 3 19.5 6 19.5C8 19.5 9 18 11 18C13 18 14 19.5 16 19.5C19 19.5 21 16.5 21 13C21 11 20.5 9 19 9Z"/>
+            <line x1="6" y1="12" x2="9" y2="12"/>
+            <line x1="7.5" y1="10.5" x2="7.5" y2="13.5"/>
+            <circle cx="15" cy="11" r="1.3" fill="currentColor" stroke="none"/>
+            <circle cx="17.5" cy="11" r="1.3" fill="currentColor" stroke="none"/>
           </svg>
         </span> Game Engines
       </div>
       <span class="int-connector">+</span>
       <div class="int-chip">
         <span class="int-icon">
-          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="5" cy="17" r="2"/>
-            <circle cx="11" cy="8" r="2"/>
-            <circle cx="18" cy="13" r="2"/>
-            <line x1="7" y1="16" x2="9.5" y2="9.5"/>
-            <line x1="13" y1="9" x2="16" y2="12"/>
+          <!-- Gear/cog: mechanical rigs — universally recognised mechanical metaphor -->
+          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="3.5"/>
+            <path d="M11 1L12.5 4.5L16 3L16 7L19.5 8L18 11L19.5 14L16 15L16 19L12.5 17.5L11 21L9.5 17.5L6 19L6 15L2.5 14L4 11L2.5 8L6 7L6 3L9.5 4.5Z"/>
           </svg>
         </span> Mechanical Rigs
       </div>
