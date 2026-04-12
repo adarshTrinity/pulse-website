@@ -629,6 +629,75 @@
     .marquee-sep { color: var(--yellow); font-size: 0.5rem; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
+    /* ─── WHAT IS PULSE ───────────────────────────────────────── */
+    #what-is-pulse {
+      background: var(--dark); padding: 120px 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .wip-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 80px; align-items: center;
+    }
+    .wip-text h2 {
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      font-weight: 900; letter-spacing: -0.03em;
+      line-height: 1.1; margin-bottom: 24px; margin-top: 16px;
+    }
+    .wip-text p {
+      font-size: 1rem; line-height: 1.85;
+      color: rgba(255,255,255,0.5); margin-bottom: 18px;
+    }
+    .wip-pills {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px;
+    }
+    .wip-pill {
+      display: inline-block;
+      background: rgba(245,194,0,0.08);
+      border: 1px solid rgba(245,194,0,0.25);
+      color: var(--yellow);
+      padding: 8px 18px; border-radius: 100px;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .wip-image-wrap { display: flex; flex-direction: column; gap: 16px; }
+    .wip-image-placeholder {
+      width: 100%; aspect-ratio: 16 / 10;
+      border-radius: 24px;
+      border: 2px dashed rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.02);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .wip-image-placeholder:hover { border-color: rgba(245,194,0,0.3); }
+    .wip-image-placeholder::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .wip-placeholder-inner {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 14px;
+      position: relative; z-index: 2; text-align: center;
+      padding: 40px;
+    }
+    .wip-placeholder-inner p {
+      font-size: 0.95rem; font-weight: 600;
+      color: rgba(255,255,255,0.25); margin: 0; line-height: 1;
+    }
+    .wip-placeholder-inner span {
+      font-size: 0.72rem; color: rgba(255,255,255,0.15);
+      letter-spacing: 0.06em;
+    }
+    .wip-image-caption {
+      font-size: 0.78rem; color: rgba(255,255,255,0.25);
+      letter-spacing: 0.02em; line-height: 1.6;
+      padding-left: 4px;
+    }
+
     /* ─── MOBILE ───────────────────────────────────────────────── */
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
@@ -636,6 +705,8 @@
       #hero { padding: 100px 24px 60px; }
       .stats-strip { padding: 20px 24px; gap: 0; flex-wrap: wrap; }
       .stat-item { padding: 12px 24px; }
+      #what-is-pulse { padding: 80px 24px; }
+      .wip-inner { grid-template-columns: 1fr; gap: 48px; }
       #problem { padding: 80px 24px; }
       .problem-inner { grid-template-columns: 1fr; gap: 48px; }
       #solution { padding: 80px 24px; }
@@ -703,6 +774,46 @@
   <div class="hero-scroll-hint">
     <div class="scroll-line"></div>
     Scroll
+  </div>
+</section>
+
+<!-- WHAT IS PULSE -->
+<section id="what-is-pulse">
+  <div class="wip-inner">
+
+    <div class="wip-text reveal">
+      <div class="section-label">What Is Pulse</div>
+      <h2>A device the size of your palm.<br/>The power of a full motion studio.</h2>
+      <p>Pulse is a compact wireless motion tracker built by Trinity XR for film, VFX, and game production. Clip it to any object — a camera, a prop, an actor's costume — and its 6-axis sensor streams live positional data directly to your screen, your engine, and your pipeline.</p>
+      <p>No bulky rigs. No post-production surprises. No reshoots. Just real-world motion, translated to your digital world in real time.</p>
+      <div class="wip-pills">
+        <span class="wip-pill">6-Axis Tracking</span>
+        <span class="wip-pill">Wireless</span>
+        <span class="wip-pill">Under 60s Setup</span>
+        <span class="wip-pill">Works On Any Rig</span>
+      </div>
+    </div>
+
+    <div class="wip-image-wrap reveal reveal-delay-2">
+      <!-- ↓ Replace this placeholder with your product image -->
+      <div class="wip-image-placeholder">
+        <div class="wip-placeholder-inner">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="14" width="48" height="36" rx="4"/>
+            <circle cx="32" cy="32" r="10"/>
+            <circle cx="32" cy="32" r="4" fill="rgba(255,255,255,0.2)" stroke="none"/>
+            <line x1="8" y1="46" x2="20" y2="34"/>
+            <line x1="44" y1="34" x2="56" y2="46"/>
+          </svg>
+          <p>Your product image goes here</p>
+          <span>Recommended: 1400 × 900px</span>
+        </div>
+      </div>
+      <div class="wip-image-caption">
+        Pulse attached to a mechanical rig on set — streaming live to Unreal Engine.
+      </div>
+    </div>
+
   </div>
 </section>
 
