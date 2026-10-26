@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PULSE by Trinity XR — Real World Motion, Live on Screen</title>
-<meta name="description" content="Pulse is a wireless motion tracker for film, games, XR and rehab. Real movement, live on screen." />
+<meta name="description" content="Pulse is a wireless motion tracker for film, games, XR and rehab. Built for film-first motion tracking." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
@@ -251,6 +251,7 @@ footer .logo { color: #fff; margin-bottom: 14px; }
   *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; }
   html { scroll-behavior: auto; } .rv { opacity: 1; transform: none; }
 }
+.pulse-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.pulse-slot{background:#131b28;color:white;border:1px dashed #68768b;border-radius:14px;padding:24px;min-height:220px;display:flex;flex-direction:column;justify-content:end;gap:8px}.pulse-slot.main{grid-column:span 2;grid-row:span 2;min-height:456px}.pulse-slot small{color:var(--amber);font:11px var(--mono)}.pulse-slot strong{font-size:clamp(1.25rem,2vw,2rem);font-weight:500}.pulse-slot span{color:#abb7c8}.pulse-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}.pulse-tabs button{padding:12px 20px;border:1px solid #617080;border-radius:40px}.pulse-tabs button[aria-selected=true]{background:var(--amber);color:#111;border-color:var(--amber)}.pulse-version{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;background:#111a29;border:1px solid #313d4b;padding:26px;border-radius:18px}.pulse-visual{min-height:350px;border:1px dashed #657387;display:grid;place-items:center;text-align:center;padding:20px;color:#a9b7c9}.pulse-version h3{font-size:clamp(1.6rem,3vw,2.8rem);margin-bottom:20px}.pulse-version p{color:#c3ccd7}.pulse-version ul{margin:20px 0 0 22px;color:#c3ccd7;line-height:2}@media(max-width:760px){.pulse-gallery{grid-template-columns:1fr 1fr}.pulse-slot.main{grid-column:span 2;min-height:310px}.pulse-version{grid-template-columns:1fr}.pulse-visual{min-height:220px}}
 </style>
 </head>
 <body>
@@ -264,9 +265,9 @@ footer .logo { color: #fff; margin-bottom: 14px; }
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Pulse home"><svg><use href="#logo"/></svg>PULSE</a>
     <nav class="links" id="links" aria-label="Sections">
-      <a href="#demo">Demo</a><a href="#attach">How it works</a><a href="#perf">Performance</a><a href="#industries">Industries</a><a href="#specs">Specs</a>
+      <a href="#demo">Demo</a><a href="#attach">How it works</a><a href="#hardware">Hardware</a><a href="#versions">Versions</a><a href="#specs">Specs</a>
     </nav>
-    <a class="btn amber" href="#start">Get PULSE</a>
+    <a class="btn amber" href="#start">Request demo</a>
   </div>
   <div class="bar" id="bar"></div>
 </header>
@@ -280,7 +281,7 @@ footer .logo { color: #fff; margin-bottom: 14px; }
     <div class="pname rv">PULSE <small>by Trinity XR</small></div>
     <h1 class="rv" style="--i:1">Real world motion. Live on screen.</h1>
     <div class="rule rv" style="--i:2"></div>
-    <p class="lead rv" style="--i:2">Wireless motion tracking for film, gaming, XR and beyond.</p>
+    <p class="lead rv" style="--i:2">Wireless motion tracking for film props, animatronics and mechanical rigs — designed for Unreal Engine workflows.</p>
     <div class="row rv" style="--i:3">
       <a class="btn amber" href="#start">Request a demo</a>
       <a class="btn line" href="#demo">Watch it work</a>
@@ -291,14 +292,14 @@ footer .logo { color: #fff; margin-bottom: 14px; }
 
 <section class="intro pad center" id="demo">
   <div class="wrap">
-    <h2 class="rv">Track real movement and bring it into the virtual set.</h2>
-    <p class="lead rv" style="--i:1">Pulse clips onto a sword, a rig, a camera or a performer and streams their motion to Unreal Engine as it happens.</p>
+    <h2 class="rv">Physical movement. Digital possibilities.</h2>
+    <p class="lead rv" style="--i:1">PULSE is being developed to bring real prop and rig orientation into Unreal Engine workflows.</p>
     <div class="player rv" id="player" style="--i:2" role="button" tabindex="0" aria-label="Play the live capture demo">
       <div class="scan"></div>
       <div class="hud" aria-hidden="true">
         <div class="tl"><i></i><span id="tc">00:00:00:00</span></div>
-        <div class="sx">Tracking <em>8 / 8</em> · 120 FPS</div>
-        <div class="rd"><div><span>X</span><b id="hx">0.000</b></div><div><span>Y</span><b id="hy">0.000</b></div><div><span>Z</span><b id="hz">2.000</b></div><div class="a"><span>PITCH</span><b id="hp">0.0°</b></div><div class="a"><span>YAW</span><b id="hw">0.0°</b></div><div class="a"><span>ROLL</span><b id="hr">0.0°</b></div></div>
+        <div class="sx">SIMULATED orientation preview · not live device telemetry</div>
+        <div class="rd"><div class="a"><span>PITCH</span><b id="hp">0.0°</b></div><div class="a"><span>YAW</span><b id="hw">0.0°</b></div><div class="a"><span>ROLL</span><b id="hr">0.0°</b></div></div>
       </div>
       <span class="playbtn"><svg viewBox="0 0 24 24" fill="currentColor" id="playIcon"><path d="M6 4l14 8-14 8z"/></svg><span id="playTxt">Play demo</span></span>
     </div>
@@ -308,7 +309,7 @@ footer .logo { color: #fff; margin-bottom: 14px; }
 <section class="attach dark pad" id="attach">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">How it works</span><h2 class="rv" style="--i:1">Track any prop. Any performer.</h2></div>
+      <div><span class="kicker rv">How it works</span><h2 class="rv" style="--i:1">Track the movement of physical props and rigs.</h2></div>
       <div class="tabs rv" id="propTabs" role="tablist" style="--i:2"><span class="pill"></span>
         <button role="tab" aria-selected="true" data-prop="0">Sword</button><button role="tab" aria-selected="false" data-prop="1">Trident</button>
       </div>
@@ -319,9 +320,9 @@ footer .logo { color: #fff; margin-bottom: 14px; }
       <div class="cap" id="propCap">Pulse sensor inside the handle.</div>
     </div>
     <div class="trio">
-      <div class="rv"><span class="n">01</span><h3>Attach</h3><p class="sm">Clip it to a prop, rig, camera or actor. No cables, ready in under a minute.</p></div>
-      <div class="rv" style="--i:1"><span class="n">02</span><h3>Move</h3><p class="sm">Perform the shot as usual. Pulse captures six axes of motion, wirelessly.</p></div>
-      <div class="rv" style="--i:2"><span class="n">03</span><h3>See it live</h3><p class="sm">Watch it stream into Unreal, your VFX pipeline or the Pulse dashboard during the take.</p></div>
+      <div class="rv"><span class="n">01</span><h3>Attach</h3><p class="sm">Attach to a prop or rig. Pair wirelessly and perform initial alignment.</p></div>
+      <div class="rv" style="--i:1"><span class="n">02</span><h3>Move</h3><p class="sm">Move the object. V1 is focused on wireless orientation tracking.</p></div>
+      <div class="rv" style="--i:2"><span class="n">03</span><h3>See it live</h3><p class="sm">Preview orientation-driven motion within a supported Unreal Engine workflow.</p></div>
     </div>
   </div>
 </section>
@@ -330,9 +331,7 @@ footer .logo { color: #fff; margin-bottom: 14px; }
   <div class="pin">
     <div class="visual"><div class="crop dev" role="img" aria-label="Pulse tracker"></div></div>
     <div class="txt">
-      <span class="kicker">Performance</span>
-      <div class="big"><span class="odo" data-to="120" data-dec="0"></span><span class="u">FPS</span></div>
-      <p class="lead">Motion streams at 120 frames per second. What you see on set is what the engine gets.</p>
+      <span class="kicker">Live motion</span><div class="big" style="font-size:clamp(2.1rem,5vw,5rem)">Orientation</div><p class="lead">Designed for wireless real-time motion input. Frame rate will be published after repeatable prototype testing.</p>
       <div class="dots"><i class="on"></i><i></i><i></i></div>
     </div>
   </div>
@@ -343,8 +342,8 @@ footer .logo { color: #fff; margin-bottom: 14px; }
     <div class="visual"><div class="crop palm" role="img" aria-label="Pulse tracker floating above an open palm"></div></div>
     <div class="txt">
       <span class="kicker">Endurance</span>
-      <div class="big"><span class="odo" data-to="8" data-dec="0"></span><span class="u">hrs</span></div>
-      <p class="lead">A full shooting day on one charge. Ultra light and wireless, so it fits in a palm and stays out of the shot.</p>
+      <div class="big"><span class="odo" data-to="6" data-dec="0"></span><span class="u">hrs</span></div>
+      <p class="lead">Up to 6 hours battery-life target, pending representative prototype tests. Compact, wireless, and prop-mountable.</p>
       <div class="dots"><i></i><i class="on"></i><i></i></div>
     </div>
   </div>
@@ -354,9 +353,7 @@ footer .logo { color: #fff; margin-bottom: 14px; }
   <div class="pin">
     <div class="visual"><div class="crop live"><img src="assets/stage-dashboard.webp" alt="Pulse dashboard on a virtual production set" loading="lazy" /></div></div>
     <div class="txt">
-      <span class="kicker">Latency</span>
-      <div class="big"><span class="odo" data-to="2.1" data-dec="1"></span><span class="u">ms</span></div>
-      <p class="lead">Fast enough to judge a take while it's still happening, not after wrap.</p>
+      <span class="kicker">Integration</span><div class="big" style="font-size:clamp(2.1rem,5vw,5rem)">Unreal Engine</div><p class="lead">Development focuses on live Unreal Engine motion workflows. End-to-end latency validation is pending.</p>
       <div class="dots"><i></i><i></i><i class="on"></i></div>
     </div>
   </div>
@@ -365,15 +362,15 @@ footer .logo { color: #fff; margin-bottom: 14px; }
 <section class="live pad" id="live">
   <div class="wrap">
     <span class="kicker d rv">See it live</span>
-    <h2 class="rv" style="--i:1">The whole volume, on one screen.</h2>
-    <p class="lead rv" style="--i:2">Tap the markers to see what the dashboard shows during a take.</p>
+    <h2 class="rv" style="--i:1">An advanced tracking interface concept.</h2>
+    <p class="lead rv" style="--i:2">Illustrative future camera-assisted concept. This is not real V1 telemetry.</p>
     <div class="frame rv" id="liveFrame" style="--i:3;margin-top:44px">
       <div class="layer crop-top on"><img src="assets/stage-dashboard.webp" alt="Virtual production set with the Pulse dashboard tracking two actors" loading="lazy" /></div>
-      <button class="hot open" style="left:70.6%;top:46%" data-hot aria-label="Capture volume">1<div class="pop"><b>Capture volume</b><span>12.0 × 10.0 m floor, 5.0 m high. Full coverage.</span></div></button>
-      <button class="hot flip r" style="left:91.5%;top:30%" data-hot aria-label="Cameras">2<div class="pop"><b>8 of 8 cameras</b><span>Every unit reports status, 1.1 to 1.4 ms latency.</span></div></button>
-      <button class="hot flip" style="left:68.8%;top:83%" data-hot aria-label="Timeline">3<div class="pop"><b>One timeline</b><span>Actors and camera data, recorded side by side.</span></div></button>
-      <button class="hot" style="left:76%;top:8%" data-hot aria-label="Frame rate">4<div class="pop"><b>120 FPS</b><span>Tracking at 2.1 ms. Live, not after the fact.</span></div></button>
-      <button class="hot flip" style="left:20%;top:78%" data-hot aria-label="On set">5<div class="pop"><b>On set</b><span>The crew sees what VFX will see.</span></div></button>
+      <button class="hot open" style="left:70.6%;top:46%" data-hot aria-label="Capture volume">1<div class="pop"><b>Capture volume</b><span>Tracking volume has not yet been validated.</span></div></button>
+      <button class="hot flip r" style="left:91.5%;top:30%" data-hot aria-label="Cameras">2<div class="pop"><b>V3 camera-fusion concept</b><span>Camera quantity and latency are not confirmed.</span></div></button>
+      <button class="hot flip" style="left:68.8%;top:83%" data-hot aria-label="Timeline">3<div class="pop"><b>One timeline</b><span>Combining motion sources is a development goal.</span></div></button>
+      <button class="hot" style="left:76%;top:8%" data-hot aria-label="Frame rate">4<div class="pop"><b>Under development</b><span>Measured frame rate and latency to be published after testing.</span></div></button>
+      <button class="hot flip" style="left:20%;top:78%" data-hot aria-label="On set">5<div class="pop"><b>On set</b><span>Designed to help filmmakers preview object movement.</span></div></button>
       <div class="integ"><span><i></i>Unreal Engine</span><span><i></i>VFX pipelines</span><span><i></i>Game engines</span><span><i></i>Mechanical rigs</span></div>
     </div>
   </div>
@@ -383,20 +380,20 @@ footer .logo { color: #fff; margin-bottom: 14px; }
   <div class="wrap">
     <div class="center">
       <span class="kicker d rv">Who it's for</span>
-      <h2 class="rv" style="--i:1">One tracker. Every kind of motion.</h2>
+      <h2 class="rv" style="--i:1">Film-first motion tracking. Built to expand.</h2>
     </div>
     <div class="cards">
       <article class="card rv">
         <div class="im t1"><img src="assets/stage-dashboard.webp" alt="" loading="lazy" /></div>
-        <div class="bd"><span class="tag">Primary market</span><h3>Film &amp; VFX</h3><p class="sm">See camera and prop motion live on set. Catch tracking failures before they reach post and cut reshoots.</p><a class="link" href="mailto:adarsh@trinityxr.in?subject=Pulse%20for%20film">Talk to us <svg><use href="#arr"/></svg></a></div>
+        <div class="bd"><span class="tag">Primary market</span><h3>Film &amp; VFX</h3><p class="sm">Use live orientation data from physical weapons, props and mechanical rigs in Unreal Engine. Position tracking is in V2 development.</p><a class="link" href="mailto:adarsh@trinityxr.in?subject=Pulse%20for%20film">Talk to us <svg><use href="#arr"/></svg></a></div>
       </article>
       <article class="card rv" style="--i:1">
         <div class="im fill"><img src="assets/skeletons.webp" alt="" loading="lazy" /></div>
-        <div class="bd"><span class="tag">Growing market</span><h3>Games &amp; simulation</h3><p class="sm">Stream real motion into your engine for authentic animation, interactive worlds and simulation rigs.</p><a class="link" href="mailto:adarsh@trinityxr.in?subject=Pulse%20for%20games">Talk to us <svg><use href="#arr"/></svg></a></div>
+        <div class="bd"><span class="tag">Growing market</span><h3>Games &amp; simulation</h3><p class="sm">Explore interactive motion-driven simulations as additional integrations are developed.</p><a class="link" href="mailto:adarsh@trinityxr.in?subject=Pulse%20for%20games">Talk to us <svg><use href="#arr"/></svg></a></div>
       </article>
       <article class="card rv" style="--i:2">
         <div class="im t2"><img src="assets/sensor-trident.webp" alt="" loading="lazy" /></div>
-        <div class="bd"><span class="tag">Emerging market</span><h3>XR, training &amp; rehab</h3><p class="sm">Immersive training and movement tracking driven by how people actually move, not by controller input.</p><a class="link" href="mailto:adarsh@trinityxr.in?subject=Pulse%20for%20XR">Talk to us <svg><use href="#arr"/></svg></a></div>
+        <div class="bd"><span class="tag">Emerging market</span><h3>XR, training &amp; rehab</h3><p class="sm">Future instrumented movement and XR training applications require separate validation.</p><a class="link" href="mailto:adarsh@trinityxr.in?subject=Pulse%20for%20XR">Talk to us <svg><use href="#arr"/></svg></a></div>
       </article>
     </div>
   </div>
@@ -407,22 +404,24 @@ footer .logo { color: #fff; margin-bottom: 14px; }
     <span class="kicker d rv">Why Pulse</span>
     <h2 class="rv" style="--i:1;max-width:14em">Built by people who spent years on real film sets.</h2>
     <div class="why">
-      <article class="w rv"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><h3>Instant</h3><p class="sm">Power on to live streaming in under a minute. No calibration ritual.</p></article>
+      <article class="w rv"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><h3>Instant</h3><p class="sm">Wireless pairing and initial orientation alignment, with setup time dependent on configuration.</p></article>
       <article class="w rv" style="--i:1"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/></svg><h3>Ultra compact</h3><p class="sm">Fits on a weapon, a costume piece or a camera rig without touching the shot.</p></article>
       <article class="w rv" style="--i:2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><h3>Easy to run</h3><p class="sm">Made for crew, not engineers. If you can press a button, you can run it.</p></article>
       <article class="w rv"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></svg><h3>Wireless</h3><p class="sm">No cables on actors or rigs. Every movement stays natural.</p></article>
       <article class="w rv" style="--i:1"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V10a4 4 0 0 1 4-4h14M7 22l-4-4 4-4M21 13v1a4 4 0 0 1-4 4H3"/></svg><h3>Real-time feedback</h3><p class="sm">Watch motion update in Unreal or your VFX dashboard during the take.</p></article>
-      <article class="w rv" style="--i:2"><svg viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4"/></svg><h3>Universal pipeline</h3><p class="sm">Works with Unreal, VFX software, game engines and mechanical rigs.</p></article>
+      <article class="w rv" style="--i:2"><svg viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4"/></svg><h3>Universal pipeline</h3><p class="sm">Unreal Engine is the primary integration focus. Other pipeline support is not yet certified.</p></article>
     </div>
-    <div class="proof rv">
-      <div><b data-n="12">0</b><span>Units built and tested</span></div>
-      <div><b data-n="6">0</b><span>Years on real film sets</span></div>
-      <div><b data-n="4">0</b><span>Industries served</span></div>
-      <div><b>∞</b><span>Reshoots saved</span></div>
-    </div>
-  </div>
-</section>
-
+    <div class="proof rv"><div><b>V1</b><span>Orientation · in development</span></div><div><b>V2</b><span>3D position · in development</span></div><div><b>V3</b><span>Sensor fusion · planned</span></div></div>
+   </div></section>
+<section class="pad" id="hardware"><div class="wrap"><span class="kicker d">PULSE V1 · real hardware</span><h2>Meet the device.</h2><p class="lead" style="margin:24px 0 35px">V1 hardware is under development. These frames are reserved for photographs of the real device—not computer-generated product imagery.</p><div class="pulse-gallery">
+<div class="pulse-slot main"><small>01 / V1 FRONT VIEW</small><strong>Actual V1 product photo</strong><span>Replace with your real hero photograph</span></div>
+<div class="pulse-slot"><small>02 / V1 DETAILS</small><strong>Hardware close-up</strong><span>Real device / PCB details</span></div>
+<div class="pulse-slot"><small>03 / V1 SCALE</small><strong>In the palm of your hand</strong><span>Real-world size reference</span></div>
+<div class="pulse-slot"><small>04 / V1 USE CASE</small><strong>Mounted on a film prop</strong><span>Real set or prototype test</span></div></div></div></section>
+<section class="dark pad" id="versions"><div class="wrap"><span class="kicker">Product roadmap</span><h2>Three versions. One ecosystem.</h2><p class="lead" style="margin:22px 0 35px">V1 and V2 are in development. V3 is the next planned phase. Specifications shown here are development goals, not certified product performance.</p>
+<div class="pulse-tabs" role="tablist" aria-label="PULSE product versions"><button type="button" role="tab" aria-selected="true" data-ver="0">V1 · Motion</button><button type="button" role="tab" aria-selected="false" data-ver="1">V2 · Spatial</button><button type="button" role="tab" aria-selected="false" data-ver="2">V3 · Fusion</button></div>
+<div class="pulse-version"><div class="pulse-visual" id="pulseVisual">ACTUAL V1 HARDWARE PHOTO PLACEHOLDER</div><div><span class="kicker" id="pulseStatus">In development</span><h3 id="pulseTitle">V1 — Wireless motion tracking</h3><p id="pulseDescription">IMU-based orientation tracking for weapons, props, animatronics and mechanical rigs. Designed for live Unreal Engine workflows.</p><ul id="pulseFeatures"><li>Pitch, yaw and roll</li><li>Wireless motion streaming</li><li>6-hour battery-life target</li><li>Compact mounting</li></ul></div></div>
+</div></section>
 <section class="specs pad" id="specs">
   <div class="wrap spec-grid">
     <div>
@@ -432,15 +431,15 @@ footer .logo { color: #fff; margin-bottom: 14px; }
       <p class="rv" style="--i:3;margin-top:26px"><a class="link" href="mailto:adarsh@trinityxr.in?subject=Pulse%20datasheet">Request the datasheet <svg><use href="#arr"/></svg></a></p>
     </div>
     <dl class="table rv" style="--i:1">
-      <div class="tr"><dt>Tracking</dt><dd>6-axis motion: position and orientation</dd></div>
-      <div class="tr"><dt>Tracking rate</dt><dd>120 FPS</dd></div>
-      <div class="tr"><dt>Latency</dt><dd>2.1 ms</dd></div>
-      <div class="tr"><dt>Battery</dt><dd>Up to 8 hours on one charge</dd></div>
+      <div class="tr"><dt>Tracking</dt><dd>V1 IMU orientation only; V2 position tracking in development</dd></div>
+      <div class="tr"><dt>Tracking rate</dt><dd>Measurement pending</dd></div>
+      <div class="tr"><dt>Latency</dt><dd>End-to-end validation pending</dd></div>
+      <div class="tr"><dt>Battery</dt><dd>Up to 6 hours (battery design target)</dd></div>
       <div class="tr"><dt>Connectivity</dt><dd>Wireless, real-time streaming</dd></div>
-      <div class="tr"><dt>Setup time</dt><dd>Under 60 seconds</dd></div>
-      <div class="tr"><dt>Form factor</dt><dd>Ultra compact, ultra light</dd></div>
-      <div class="tr"><dt>Mounts to</dt><dd>Props, rigs, cameras and actors</dd></div>
-      <div class="tr"><dt>Compatibility</dt><dd>Unreal Engine, VFX pipelines, game engines, mechanical rigs</dd></div>
+      <div class="tr"><dt>Setup time</dt><dd>Wireless pairing and alignment</dd></div>
+      <div class="tr"><dt>Form factor</dt><dd>Compact prototype; final weight to be confirmed</dd></div>
+      <div class="tr"><dt>Mounts to</dt><dd>Props and mechanical rigs; fixtures depend on use case</dd></div>
+      <div class="tr"><dt>Compatibility</dt><dd>Unreal Engine development integration; other pipelines TBD</dd></div>
     </dl>
   </div>
 </section>
@@ -450,7 +449,7 @@ footer .logo { color: #fff; margin-bottom: 14px; }
     <div>
       <span class="kicker rv">Get started</span>
       <h2 class="rv" style="--i:1">Stop guessing. <em>Start seeing.</em></h2>
-      <p class="lead rv" style="--i:2">Join the crews using Pulse to cut reshoots and put real motion on screen, live.</p>
+      <p class="lead rv" style="--i:2">For directors, VFX supervisors and investors: explore the prototype, roadmap and potential filmmaking applications.</p>
       <div class="row rv" style="--i:3">
         <a class="btn amber" href="mailto:adarsh@trinityxr.in?subject=Pulse%20demo%20request">Request a demo <svg><use href="#arr"/></svg></a>
         <a class="btn line" href="mailto:adarsh@trinityxr.in?subject=Pulse%20sales">Contact sales</a>
@@ -487,7 +486,7 @@ footer .logo { color: #fff; margin-bottom: 14px; }
 
   const bar = $('#bar');
   const so = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) $$('#links a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
-  ['demo', 'attach', 'perf', 'industries', 'specs'].forEach(id => so.observe(document.getElementById(id)));
+  ['demo', 'attach', 'hardware', 'versions', 'specs'].forEach(id => so.observe(document.getElementById(id)));
 
   /* odometer */
   function buildOdo(el) {
@@ -536,9 +535,9 @@ footer .logo { color: #fff; margin-bottom: 14px; }
   let playing = false, raf = 0, t0 = 0;
   function tickDemo(t) {
     const s = (t - t0) / 1000;
-    $('#hx').textContent = (Math.sin(s * 1.3) * 9 + Math.sin(s * 3.1) * 2).toFixed(3);
-    $('#hy').textContent = (Math.sin(s * .9 + 1) * 3).toFixed(3);
-    $('#hz').textContent = (2 + Math.sin(s * 1.7) * .7).toFixed(3);
+    
+    
+    
     $('#hp').textContent = (Math.sin(s * 2.1) * 42).toFixed(1) + '°'; $('#hw').textContent = (Math.sin(s * 1.2 + 2) * 70).toFixed(1) + '°'; $('#hr').textContent = (Math.sin(s * 3.3) * 28).toFixed(1) + '°';
     const f = Math.floor(s * 24) % 24, sec = Math.floor(s) % 60, m = Math.floor(s / 60);
     $('#tc').textContent = `00:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}:${String(f).padStart(2, '0')}`;
@@ -554,6 +553,11 @@ footer .logo { color: #fff; margin-bottom: 14px; }
   player.addEventListener('click', toggle);
   player.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
 
+  const pulseVersions=[
+  ['In development','V1 — Wireless motion tracking','IMU-based orientation tracking for weapons, props, animatronics and mechanical rigs. Designed for live Unreal Engine workflows.','ACTUAL V1 HARDWARE PHOTO PLACEHOLDER',['Pitch, yaw and roll','Wireless streaming','6-hour battery-life target','Compact mounting']],
+  ['In development','V2 — Spatial tracking','Position and orientation tracking using external spatial references. Coverage, accuracy and multi-device performance remain under validation.','V2 PROTOTYPE PHOTO PLACEHOLDER',['3D position target','IMU orientation','Configured tracking area','Testing in progress']],
+  ['Planned','V3 — Advanced tracking','Planned camera-assisted fusion for complex object and character tracking. This is a future product concept.','V3 CONCEPT VISUAL PLACEHOLDER',['Camera-assisted tracking','Sensor fusion','Expanded applications','Specifications to be defined']]];
+  $('.pulse-tabs button').forEach(b=>b.addEventListener('click',()=>{const v=pulseVersions[+b.dataset.ver];$('.pulse-tabs button').forEach(t=>t.setAttribute('aria-selected',String(t===b)));$('#pulseStatus').textContent=v[0];$('#pulseTitle').textContent=v[1];$('#pulseDescription').textContent=v[2];$('#pulseVisual').textContent=v[3];$('#pulseFeatures').replaceChildren(...v[4].map(f=>{const li=document.createElement('li');li.textContent=f;return li;}));}));
   /* attach tabs */
   const caps = ['Pulse sensor inside the handle.', 'Strapped over the shaft. Same sensor, any prop.'], layers = $$('#propFrame .layer');
   const tabs = $('#propTabs'), tb = $$('button', tabs), pill = $('.pill', tabs);
