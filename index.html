@@ -294,14 +294,14 @@ footer .logo { color: #fff; margin-bottom: 14px; }
   <div class="wrap">
     <h2 class="rv">Physical movement. Digital possibilities.</h2>
     <p class="lead rv" style="--i:1">PULSE is being developed to bring real prop and rig orientation into Unreal Engine workflows.</p>
-    <div class="player rv" id="player" style="--i:2" role="button" tabindex="0" aria-label="Play the live capture demo">
+    <div class="player rv" id="player" style="--i:2" role="button" tabindex="0" aria-label="Play a simulated orientation preview, not real device telemetry">
       <div class="scan"></div>
       <div class="hud" aria-hidden="true">
         <div class="tl"><i></i><span id="tc">00:00:00:00</span></div>
         <div class="sx">SIMULATED orientation preview · not live device telemetry</div>
         <div class="rd"><div class="a"><span>PITCH</span><b id="hp">0.0°</b></div><div class="a"><span>YAW</span><b id="hw">0.0°</b></div><div class="a"><span>ROLL</span><b id="hr">0.0°</b></div></div>
       </div>
-      <span class="playbtn"><svg viewBox="0 0 24 24" fill="currentColor" id="playIcon"><path d="M6 4l14 8-14 8z"/></svg><span id="playTxt">Play demo</span></span>
+      <span class="playbtn"><svg viewBox="0 0 24 24" fill="currentColor" id="playIcon"><path d="M6 4l14 8-14 8z"/></svg><span id="playTxt">Play simulation</span></span>
     </div>
   </div>
 </section>
@@ -406,7 +406,7 @@ footer .logo { color: #fff; margin-bottom: 14px; }
     <div class="why">
       <article class="w rv"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><h3>Instant</h3><p class="sm">Wireless pairing and initial orientation alignment, with setup time dependent on configuration.</p></article>
       <article class="w rv" style="--i:1"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/></svg><h3>Ultra compact</h3><p class="sm">Fits on a weapon, a costume piece or a camera rig without touching the shot.</p></article>
-      <article class="w rv" style="--i:2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><h3>Easy to run</h3><p class="sm">Made for crew, not engineers. If you can press a button, you can run it.</p></article>
+      <article class="w rv" style="--i:2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><h3>Easy to run</h3><p class="sm">Made for crew, not engineers. Designed for a straightforward on-set operator workflow.</p></article>
       <article class="w rv"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></svg><h3>Wireless</h3><p class="sm">No cables on actors or rigs. Every movement stays natural.</p></article>
       <article class="w rv" style="--i:1"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V10a4 4 0 0 1 4-4h14M7 22l-4-4 4-4M21 13v1a4 4 0 0 1-4 4H3"/></svg><h3>Real-time feedback</h3><p class="sm">Watch motion update in Unreal or your VFX dashboard during the take.</p></article>
       <article class="w rv" style="--i:2"><svg viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4"/></svg><h3>Universal pipeline</h3><p class="sm">Unreal Engine is the primary integration focus. Other pipeline support is not yet certified.</p></article>
@@ -486,7 +486,7 @@ footer .logo { color: #fff; margin-bottom: 14px; }
 
   const bar = $('#bar');
   const so = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) $$('#links a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
-  ['demo', 'attach', 'hardware', 'versions', 'specs'].forEach(id => so.observe(document.getElementById(id)));
+  ['demo', 'attach', 'hardware', 'versions', 'specs'].forEach(id => { const el = document.getElementById(id); if (el) so.observe(el); });
 
   /* odometer */
   function buildOdo(el) {
@@ -504,7 +504,7 @@ footer .logo { color: #fff; margin-bottom: 14px; }
     const str = v.toFixed(+el.dataset.dec).padStart(+el.dataset.len, '0'), cols = $$('.s', el); let k = 0;
     for (const ch of str) { if (ch === '.') continue; if (cols[k]) cols[k++].style.transform = `translateY(${-(+ch)}em)`; }
   }
-  const stats = $$('[data-stat]');
+  const stats = $('[data-stat]').filter(el => $('.odo', el));
   stats.forEach(s => { const o = $('.odo', s); buildOdo(o); setOdo(o, 0); });
   const ease = t => 1 - Math.pow(1 - t, 3);
   function onScroll() {
@@ -546,7 +546,7 @@ footer .logo { color: #fff; margin-bottom: 14px; }
   }
   function toggle() {
     playing = !playing; player.classList.toggle('playing', playing);
-    pTxt.textContent = playing ? 'Pause' : 'Play demo';
+    pTxt.textContent = playing ? 'Pause simulation' : 'Play simulation';
     pIcon.innerHTML = playing ? '<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>' : '<path d="M6 4l14 8-14 8z"/>';
     if (playing) { t0 = performance.now(); raf = requestAnimationFrame(tickDemo); } else cancelAnimationFrame(raf);
   }
